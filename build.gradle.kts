@@ -1,22 +1,11 @@
-plugins {
-    kotlin("jvm") version "2.3.20"
-}
-
 group = "com.over"
 version = "1.0-SNAPSHOT"
 
-repositories {
-    mavenCentral()
-}
+subprojects {
+    group = rootProject.group
+    version = rootProject.version
 
-dependencies {
-    testImplementation(kotlin("test"))
-}
-
-kotlin {
-    jvmToolchain(21)
-}
-
-tasks.test {
-    useJUnitPlatform()
+    repositories {
+        mavenCentral()
+    }
 }
