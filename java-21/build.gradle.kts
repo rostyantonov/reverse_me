@@ -9,5 +9,5 @@ java {
 }
 
 dependencies {
-    api(project(":java-20"))
+    api(project(":java-17"))
 }
