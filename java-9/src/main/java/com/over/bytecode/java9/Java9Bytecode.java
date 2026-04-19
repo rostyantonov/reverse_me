@@ -16,6 +16,22 @@ public interface Java9Bytecode extends Java8Bytecode {
 
     int MAJOR_VERSION = 53;
 
+    // ── New constant pool tags (JVMS §4.4) ───────────────────────────────────
+
+    /**
+     * Represents a module name in the constant pool — tag value 19.
+     * Used exclusively inside {@code module-info.class} files.
+     * The entry carries an index to a CONSTANT_Utf8 for the module name.
+     */
+    int CONSTANT_MODULE = 19;
+
+    /**
+     * Represents a package name in the constant pool — tag value 20.
+     * Used exclusively inside {@code module-info.class} files.
+     * The entry carries an index to a CONSTANT_Utf8 for the package binary name.
+     */
+    int CONSTANT_PACKAGE = 20;
+
     // ── Attributes first defined in Java 9 ───────────────────────────────────
 
     /**

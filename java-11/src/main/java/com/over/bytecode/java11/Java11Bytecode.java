@@ -10,11 +10,26 @@ import com.over.bytecode.java9.Java9Bytecode;
  * between a host class and its nest members. Two new attributes record the
  * nest relationship so the JVM can perform direct access checks.
  *
+ * <p>Java 11 also introduced Constant Dynamic (JEP 309): a new constant pool
+ * tag that allows lazy, bootstrap-driven constant computation analogous to
+ * {@code invokedynamic} but for constants.
+ *
  * <p>New predefined class file attributes: NestHost, NestMembers.
  */
 public interface Java11Bytecode extends Java9Bytecode {
 
     int MAJOR_VERSION = 55;
+
+    // ── New constant pool tag (JVMS §4.4) ────────────────────────────────────
+
+    /**
+     * Represents a dynamically-computed constant — tag value 17 (JEP 309).
+     * Analogous to CONSTANT_InvokeDynamic but for constant values rather than
+     * call sites. The entry carries a bootstrap method index and a
+     * CONSTANT_NameAndType index; the bootstrap method is invoked once to
+     * produce the constant value.
+     */
+    int CONSTANT_DYNAMIC = 17;
 
     // ── Attributes first defined in Java 11 ──────────────────────────────────
 
