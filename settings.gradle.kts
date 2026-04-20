@@ -8,12 +8,9 @@ include(
     ":common",
     ":java-1",
     ":java-5",
-    ":java-6",
     ":java-7",
     ":java-8",
-    ":java-9",
     ":java-11",
-    ":java-16",
     ":java-17",
     ":java-21"
 )
