@@ -14,3 +14,11 @@ include(
     ":java-17",
     ":java-21"
 )
+
+project(":java-1").projectDir = file("java/java-1")
+project(":java-5").projectDir = file("java/java-5")
+project(":java-7").projectDir = file("java/java-7")
+project(":java-8").projectDir = file("java/java-8")
+project(":java-11").projectDir = file("java/java-11")
+project(":java-17").projectDir = file("java/java-17")
+project(":java-21").projectDir = file("java/java-21")
